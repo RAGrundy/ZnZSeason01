@@ -16,26 +16,25 @@ LuaServerCommands.register("checkinfected", function(author, command, args)
     local username = args[1];
     local player = helper.getPlayerByUsername(username);
     if player == nil then
-        print("checkinfected - Player not found: " .. tostring(username));
+        --print("checkinfected - Player not found: " .. tostring(username));
         return "Player not found: " .. tostring(username)
     end
 
     local bodyDamage = player:getBodyDamage();
     if bodyDamage:IsInfected() == true then
-        print("checkinfected - Host is infected");
+        --print("checkinfected - Host is infected");
 
         local bodyParts = bodyDamage:getBodyParts();
         for i = 0, bodyParts:size() - 1 do
             local bodyPart = bodyParts:get(i);
             if bodyPart:IsInfected() == true then
-                print("checkinfected - Infected player: " ..
-                    tostring(author) .. ". Infected body part" .. tostring(bodyPart));
+                --print("checkinfected - Infected player: " .. --tostring(author) .. ". Infected body part" .. tostring(bodyPart));
 
                 return "Infected player: " .. tostring(author) .. ". Infected body part" .. tostring(bodyPart);
             end
         end
     end
 
-    print("checkinfected - Uninfected player: " .. tostring(author));
+    --print("checkinfected - Uninfected player: " .. tostring(author));
     return "Uninfected player: " .. tostring(author);
 end)

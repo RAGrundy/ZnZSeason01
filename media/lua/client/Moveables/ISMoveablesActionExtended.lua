@@ -103,14 +103,12 @@ function ISMoveablesActionExtended:perform()
     if self.moveProps and self.moveProps.isMoveable and self.mode == "push" then
         --print("ISMoveablesActionExtended - IsMoveable");
         if self.mode == "push" then
-            print("ISMoveablesActionExtended - Pushing Object");
-
-            print("ISMoveablesActionExtended - Picking up Object")
+            --print("ISMoveablesActionExtended - Picking up Object")
             self.moveProps:pickUpMoveableViaCursor(self.character, self.square, self.origSpriteName, self.moveCursor)
 
             IsoPlayer:getInstance():AttemptAttack()
 
-            print("ISMoveablesActionExtended - Placing Object")
+            --print("ISMoveablesActionExtended - Placing Object")
             self.moveProps:placeMoveableViaCursor(self.character, self.newSquare, self.origSpriteName, self.moveCursor);
             buildUtil.setHaveConstruction(self.square, true);
         end
@@ -122,7 +120,7 @@ end
 function ISMoveablesActionExtended:new(character, _oldSquare, _newSquare, _item, _moveProps, _mode, _origSpriteName,
                                        _moveCursor)
     --print("ISMoveablesActionExtended - New Action")
-    print("ISMoveablesActionExtended - Sprite - " .. _origSpriteName)
+    --print("ISMoveablesActionExtended - Sprite - " .. _origSpriteName)
 
     local o = {};
     setmetatable(o, self);

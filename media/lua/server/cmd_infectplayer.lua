@@ -16,7 +16,7 @@ LuaServerCommands.register("infectplayer", function(author, command, args)
     local username = args[1];
     local player = helper.getPlayerByUsername(username);
     if player == nil then
-        print("checkinfected - Player not found: " .. tostring(username));
+        --print("checkinfected - Player not found: " .. tostring(username));
         return "Player not found: " .. tostring(username)
     end
 
@@ -26,7 +26,7 @@ LuaServerCommands.register("infectplayer", function(author, command, args)
     bodyDamage:setInfectionTime(5);
     bodyDamage:setInfectionLevel(50);
 
-    print("checkinfected - Host is infected");
+    --print("checkinfected - Host is infected");
 
     local bodyParts = bodyDamage:getBodyParts();
     for i = 0, bodyParts:size() - 1 do
@@ -34,11 +34,11 @@ LuaServerCommands.register("infectplayer", function(author, command, args)
             local bodyPart = bodyParts:get(i);
             bodyPart:SetInfected(true);
 
-            print(tostring(bodyPart) .. " is infected");
+            --print(tostring(bodyPart) .. " is infected");
         end
     end
 
-    print("checkinfected - Infected player: " .. tostring(author));
+    --print("checkinfected - Infected player: " .. tostring(author));
     return "Infected player: "
         .. tostring(author);
 end)
