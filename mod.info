@@ -1,0 +1,5 @@
+name=ZnZSeason01
+id=ZnZSeason01
+description=ZnZSeason01
+poster=poster.png
+require=lua_server_commands

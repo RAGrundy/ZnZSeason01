@@ -1,0 +1,21 @@
+module ZnZSeason01
+{
+	imports
+	{
+		Base
+	}
+
+	item AntiVirus
+    {
+       	DisplayCategory		= FirstAid,
+		Weight				= 0.2,
+       	Type				= Food,
+		DisplayName			= Anti Virus,
+		Icon				= AntiVirus,
+		Medical 			= TRUE,
+		CustomContextMenu   = Take,
+		EatType				= popcan,
+		OnEat 				= OnEat_AntiVirus,
+		WorldStaticModel 	= Antibiotics,
+    }
+}
