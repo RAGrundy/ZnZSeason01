@@ -15,7 +15,7 @@ module ZnZSeason01
 		Medical 			= TRUE,
 		CustomContextMenu   = Take,
 		EatType				= popcan,
-		OnEat 				= OnEat_AntiVirus,
+		OnEat 				= OnTake_AntiVirus,
 		WorldStaticModel 	= Antibiotics,
     }
 }
